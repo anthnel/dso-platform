@@ -1,0 +1,3 @@
+---
+trivy_quadlets_home: $HOME/.config/containers/systemd
+trivy_volume_cache_name: trivy-cache

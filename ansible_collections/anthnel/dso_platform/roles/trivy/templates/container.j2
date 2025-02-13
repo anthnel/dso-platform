@@ -1,0 +1,15 @@
+[Unit]
+Description={{ role_name }} Container
+
+[Container]
+Label=app={{ role_name }}
+ContainerName={{ role_name }}
+Image={{ trivy_image }}
+Volume={{ trivy_volume_cache_name }}.volume:/root/.cache/
+Exec=server --listen=0.0.0.0:{{ trivy_port }} -d
+PublishPort={{ trivy_port_published }}:{{ trivy_port }}
+AutoUpdate=registry
+
+
+[Install]
+WantedBy=multi-user.target default.target

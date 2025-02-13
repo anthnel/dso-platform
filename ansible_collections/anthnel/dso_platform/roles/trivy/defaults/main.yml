@@ -1,0 +1,6 @@
+---
+trivy_image_registry: "{{ docker_registry }}"
+trivy_port: 4954
+trivy_port_published: 4954
+trivy_version: 0.59.1
+trivy_image: "{{ trivy_image_registry }}/aquasec/trivy:{{ trivy_version }}"
