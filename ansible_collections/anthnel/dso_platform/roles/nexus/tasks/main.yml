@@ -1,0 +1,26 @@
+---
+- name: Create directory for quadlets
+  ansible.builtin.file:
+    path: "{{ trivy_quadlets_home }}"
+    state: directory
+    mode: "0755"
+
+- name: Create the cache volume
+  ansible.builtin.template:
+    src: volume-cache.j2
+    dest: "{{ trivy_quadlets_home }}/{{ trivy_volume_cache_name }}.volume"
+    mode: "0644"
+
+- name: Create the container unit
+  ansible.builtin.template:
+    src: container.j2
+    dest: "{{ trivy_quadlets_home }}/{{ role_name }}.container"
+    mode: "0644"
+
+- name: Reload and start the service
+  ansible.builtin.service:
+    name: "{{ role_name }}"
+    enabled: true
+    daemon_reload: true
+    scope: user
+    state: restarted

@@ -1,5 +1,5 @@
-anthnel.dso_platform Run Role
-========================
+anthnel.dso_platform.sonarqube Run Role
+=======================================
 
 A brief description of the role goes here.
 

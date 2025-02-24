@@ -1,6 +1,6 @@
 galaxy_info:
   author: foo
-  description: anthnel.dso_platform Run Role
+  description: anthnel.dso_platform.gitlab Run Role
   company: anthnel
 
   # If the issue tracker for your role is not on github, uncomment the

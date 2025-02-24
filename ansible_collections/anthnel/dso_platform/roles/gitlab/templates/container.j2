@@ -1,0 +1,21 @@
+[Unit]
+Description=Gitlab Container
+
+[Container]
+Label=app=gitlab
+ContainerName=gitlab
+Image=docker.io/gitlab/gitlab-ee:17.6.1-ee.0
+Volume=gitlab-data.volume:/var/opt/gitlab
+Volume=gitlab-config.volume:/etc/gitlab
+Volume=gitlab-logs.volume:/var/log/gitlab
+Volume=/home/sites/git/ssl:/etc/gitlab/ssl
+#EnvironmentFile=gitlab.env
+#PublishPort=8080:80
+PublishPort=8443:443
+#PublishPort=5000:5000
+PublishPort=8022:22
+#AutoUpdate=registry
+ShmSize=256m
+
+[Install]
+WantedBy=multi-user.target default.target

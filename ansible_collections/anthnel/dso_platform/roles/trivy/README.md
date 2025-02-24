@@ -1,4 +1,4 @@
-Spw.Platform Run Role
+anthnel.dso_platform Run Role
 ========================
 
 A brief description of the role goes here.
@@ -27,20 +27,20 @@ Including an example of how to use your role (for instance, with variables passe
 - name: Execute tasks on servers
   hosts: servers
   roles:
-    - role: spw.platform.run
+    - role: anthnel.dso_platform.run
       run_x: 42
 ```
 
 Another way to consume this role would be:
 
 ```yaml
-- name: Initialize the run role from spw.platform
+- name: Initialize the run role from anthnel.dso_platform
   hosts: servers
   gather_facts: false
   tasks:
     - name: Trigger invocation of run role
       ansible.builtin.include_role:
-        name: spw.platform.run
+        name: anthnel.dso_platform.run
       vars:
         run_x: 42
 ```

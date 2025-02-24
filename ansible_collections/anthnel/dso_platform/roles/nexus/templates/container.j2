@@ -1,0 +1,19 @@
+[Unit]
+Description={{ role_name }} Container
+
+[Container]
+Label=app={{ role_name }}
+ContainerName={{ role_name }}
+Image=docker.io/sonatype/nexus3:3.75.0
+Volume={{ nexus_volume_name }}.volume:/nexus-data
+PublishPort=8081:8081
+PublishPort=6000:6000
+PublishPort=6001:6001
+PublishPort=6002:6002
+PublishPort=6003:6003
+PublishPort=7000:7000
+AutoUpdate=registry
+
+
+[Install]
+WantedBy=multi-user.target default.target
