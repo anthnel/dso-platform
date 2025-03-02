@@ -1,0 +1,20 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Install and configure DSO Platform
+  hosts: dev
+  gather_facts: true
+
+  vars:
+    docker_registry: registry.home.lan
+
+  tasks:
+    - name: Example from an Ansible Playbook
+      ansible.builtin.ping:
+
+    - name: Install Podman
+      ansible.builtin.include_role:
+        name: anthnel.dso_platform.podman
+
+    - name: Install Trivy
+      ansible.builtin.include_role:
+        name: anthnel.dso_platform.trivy
