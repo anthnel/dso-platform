@@ -8,7 +8,7 @@
     docker_registry: registry.home.lan
 
   tasks:
-    - name: Example from an Ansible Playbook
+    - name: Ensure server is UP
       ansible.builtin.ping:
 
     - name: Install Podman
